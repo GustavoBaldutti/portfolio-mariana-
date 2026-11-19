@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mariana · Videomaker</title>
+<meta name="description" content="Mariana, videomaker. Vídeos com narrativa, emoção e propósito para marcas, casamentos e eventos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ CONFIGURAÇÃO RÁPIDA ============
+  WhatsApp: troque o número em js/main.js (const WHATSAPP)
+  Fotos: coloque os arquivos na pasta /fotos com os nomes usados abaixo
+  ============================================== -->
+
+<nav id="navbar">
+  <a class="nav-logo" href="#inicio">Mariana<span>.</span></a>
+  <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#metodo">Método</a></li>
+    <li><a href="#portfolio">Portfólio</a></li>
+    <li><a href="#contato">Contato</a></li>
+    <li><a href="#" class="btn btn-areia" data-wa="Oi Mariana, vim pelo site e queria conversar sobre um vídeo">Fale comigo</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="inicio">
+  <div class="hero-bg foto" data-img="fotos/mariana.png"></div>
+  <div class="hero-conteudo reveal">
+    <span class="label">Videomaker · Sua cidade, UF</span>
+    <h1>Histórias em movimento,<br>contadas do <em>seu jeito</em></h1>
+    <p>Crio vídeos para marcas, casamentos e eventos com olhar de cinema e intenção clara, do roteiro à edição final, para que cada cena diga exatamente o que precisa dizer.</p>
+    <div class="hero-acoes">
+      <a class="btn btn-areia" href="#portfolio">Ver portfólio</a>
+      <a class="btn btn-outline" href="#" data-wa="Oi Mariana, vim pelo site e tenho um projeto em mente">Conversar sobre um projeto</a>
+    </div>
+  </div>
+  <a class="hero-scroll" href="#numeros" aria-label="Rolar para baixo">Role</a>
+</header>
+
+<!-- NÚMEROS -->
+<section class="numeros" id="numeros">
+  <div class="numero-item reveal"><strong data-count="300">+300</strong><span>Vídeos entregues</span></div>
+  <div class="numero-item reveal"><strong data-count="80">+80</strong><span>Clientes atendidos</span></div>
+  <div class="numero-item reveal"><strong data-count="5">+5</strong><span>Anos atrás da câmera</span></div>
+</section>
+
+<!-- SOBRE -->
+<section class="secao secao-areia" id="sobre">
+  <div class="container sobre">
+    <div class="sobre-foto foto reveal" data-img="fotos/mariana.png"><span class="sobre-tag">Oi, eu sou a Mariana</span></div>
+    <div class="sobre-texto reveal">
+      <span class="label escuro">Quem está por trás da câmera</span>
+      <h2>Um bom vídeo começa muito antes do <em>rec</em></h2>
+      <div class="linha"></div>
+      <p>Escreva aqui a sua história: como você chegou ao audiovisual, o que te move e o que faz o seu trabalho ser diferente. Duas ou três frases sinceras funcionam melhor do que um currículo inteiro.</p>
+      <p>Conte também como é trabalhar com você: se você conversa antes de gravar, se acompanha todas as captações, qual o cuidado com a edição. É isso que faz alguém sentir confiança para te chamar.</p>
+      <a class="btn btn-outline-escuro" href="#metodo">Conhecer meu método</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="secao secao-escura" id="servicos">
+  <div class="container">
+    <div class="intro reveal">
+      <span class="label">O que você precisa?</span>
+      <h2>Escolha o caminho<br>do seu vídeo</h2>
+      <p>Cada projeto pede uma abordagem diferente. Passe o mouse (ou toque) nos cards para saber mais.</p>
+    </div>
+    <div class="cards">
+      <a class="card reveal" href="#portfolio" data-filtro="marcas">
+        <div class="card-img foto" data-img="fotos/servico-marcas.jpg"></div>
+        <div class="card-conteudo">
+          <div class="card-num">01</div>
+          <h3>Conteúdo para marcas</h3>
+          <div class="card-extra">
+            <p>Vídeos recorrentes para redes sociais e campanhas, com roteiro e edição pensados para posicionar o seu negócio.</p>
+            <span class="card-link">Ver trabalhos <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          </div>
+        </div>
+      </a>
+      <a class="card reveal" href="#portfolio" data-filtro="casamentos">
+        <div class="card-img foto" data-img="fotos/servico-casamentos.jpg"></div>
+        <div class="card-conteudo">
+          <div class="card-num">02</div>
+          <h3>Casamentos</h3>
+          <div class="card-extra">
+            <p>Um filme do seu dia, com a emoção, o som e o ritmo de cada momento, para reviver quantas vezes quiser.</p>
+            <span class="card-link">Ver trabalhos <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          </div>
+        </div>
+      </a>
+      <a class="card reveal" href="#portfolio" data-filtro="eventos">
+        <div class="card-img foto" data-img="fotos/servico-eventos.jpg"></div>
+        <div class="card-conteudo">
+          <div class="card-num">03</div>
+          <h3>Eventos</h3>
+          <div class="card-extra">
+            <p>Corporativos, formaturas e celebrações registrados com a atmosfera real de quem estava lá.</p>
+            <span class="card-link">Ver trabalhos <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          </div>
+        </div>
+      </a>
+      <a class="card reveal" href="#portfolio" data-filtro="reels">
+        <div class="card-img foto" data-img="fotos/servico-reels.jpg"></div>
+        <div class="card-conteudo">
+          <div class="card-num">04</div>
+          <h3>Reels &amp; edição</h3>
+          <div class="card-extra">
+            <p>Já tem o material bruto? Eu edito com cortes, trilha e legendas para prender a atenção desde o primeiro segundo.</p>
+            <span class="card-link">Ver trabalhos <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- BANNER -->
+<div class="banner reveal">
+  <div>
+    <h3>Ainda não sabe qual formato é o seu?</h3>
+    <p>Me conta o seu objetivo e eu te indico o melhor caminho, sem compromisso.</p>
+  </div>
+  <a href="#" class="btn btn-oliva" data-wa="Oi Mariana, ainda não sei qual formato de vídeo preciso. Pode me ajudar?">Quero uma indicação</a>
+</div>
+
+<!-- MÉTODO -->
+<section class="secao secao-clara" id="metodo">
+  <div class="container">
+    <div class="intro reveal">
+      <span class="label escuro">Como eu trabalho</span>
+      <h2>O método <em>CENA</em></h2>
+      <p>Conceito, Emoção, Narrativa e Ação. As quatro etapas que guiam todo projeto, do primeiro briefing à entrega.</p>
+    </div>
+    <div class="metodo-grid reveal">
+      <div class="metodo-item"><div class="metodo-letra">C</div><div class="metodo-palavra">Conceito</div><p>Entendo quem você é, para quem fala e qual a ideia central que o vídeo precisa carregar.</p></div>
+      <div class="metodo-item"><div class="metodo-letra">E</div><div class="metodo-palavra">Emoção</div><p>Defino o sentimento que cada cena deve provocar, da trilha à luz e ao enquadramento.</p></div>
+      <div class="metodo-item"><div class="metodo-letra">N</div><div class="metodo-palavra">Narrativa</div><p>Organizo começo, meio e fim para que a história flua e prenda até o último segundo.</p></div>
+      <div class="metodo-item"><div class="metodo-letra">A</div><div class="metodo-palavra">Ação</div><p>Todo vídeo tem um propósito: vender, emocionar, lembrar. A entrega é pensada para isso.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFÓLIO -->
+<section class="secao secao-escura" id="portfolio">
+  <div class="container">
+    <div class="intro reveal">
+      <span class="label">Portfólio</span>
+      <h2>Alguns trabalhos</h2>
+    </div>
+    <div class="filtros reveal" role="tablist">
+      <button class="filtro ativo" data-filtro="todos">Todos</button>
+      <button class="filtro" data-filtro="marcas">Marcas</button>
+      <button class="filtro" data-filtro="casamentos">Casamentos</button>
+      <button class="filtro" data-filtro="eventos">Eventos</button>
+      <button class="filtro" data-filtro="reels">Reels</button>
+    </div>
+    <!-- Para cada vídeo: data-video = link de incorporação do YouTube/Vimeo (ex.: https://www.youtube.com/embed/ID) -->
+    <div class="galeria">
+      <button class="item foto reveal" data-cat="marcas" data-video="" data-img="fotos/trabalho-1.jpg"><span class="item-info"><small>Marca</small>Nome do projeto</span><span class="play"></span></button>
+      <button class="item item-alto foto reveal" data-cat="casamentos" data-video="" data-img="fotos/trabalho-2.jpg"><span class="item-info"><small>Casamento</small>Ana &amp; Pedro</span><span class="play"></span></button>
+      <button class="item foto reveal" data-cat="eventos" data-video="" data-img="fotos/trabalho-3.jpg"><span class="item-info"><small>Evento</small>Nome do evento</span><span class="play"></span></button>
+      <button class="item foto reveal" data-cat="reels" data-video="" data-img="fotos/trabalho-4.jpg"><span class="item-info"><small>Reels</small>Nome do projeto</span><span class="play"></span></button>
+      <button class="item foto reveal" data-cat="marcas" data-video="" data-img="fotos/trabalho-5.jpg"><span class="item-info"><small>Marca</small>Nome do projeto</span><span class="play"></span></button>
+      <button class="item item-largo foto reveal" data-cat="casamentos" data-video="" data-img="fotos/trabalho-6.jpg"><span class="item-info"><small>Casamento</small>Julia &amp; Rafa</span><span class="play"></span></button>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTO -->
+<section class="secao secao-areia">
+  <div class="container">
+    <figure class="depoimento reveal">
+      <div class="linha centro"></div>
+      <blockquote>“Coloque aqui um depoimento real de cliente. Uma frase curta e verdadeira vale mais do que um parágrafo.”</blockquote>
+      <figcaption>Nome do cliente · Tipo de projeto</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="secao secao-escura" id="contato">
+  <div class="container cta reveal">
+    <span class="label">Próximo passo</span>
+    <h2>Vamos transformar sua ideia<br>em <em>cena</em>?</h2>
+    <p>Me conta o que você tem em mente. Não precisa estar tudo definido: a gente descobre o melhor caminho juntas na conversa.</p>
+    <div class="cta-acoes">
+      <a href="#" class="btn btn-areia" data-wa="Oi Mariana, vim pelo site e quero conversar sobre um projeto">Falar pelo WhatsApp</a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="btn btn-outline">Ver no Instagram</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h3 class="footer-logo">Mariana<span>.</span></h3>
+      <div class="linha"></div>
+      <p>Videomaker em Sua cidade, UF.<br>Atendimento em todo o Brasil.</p>
+    </div>
+    <nav>
+      <h4>Navegação</h4>
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#metodo">Método</a></li>
+        <li><a href="#portfolio">Portfólio</a></li>
+      </ul>
+    </nav>
+    <div>
+      <h4>Contato</h4>
+      <ul>
+        <li><a href="#" data-wa="Oi Mariana, vim pelo site">(00) 00000-0000</a></li>
+        <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram @seuusuario</a></li>
+        <li><a href="mailto:contato@exemplo.com">contato@exemplo.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© <span id="ano">2026</span> Mariana. Todos os direitos reservados.</div>
+</footer>
+
+<a href="#" class="whats" data-wa="Oi Mariana, vim pelo site e queria conversar" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.66 15l-1.32 4.82 4.94-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-2.93.77.78-2.86-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.14c-.25-.12-1.46-.72-1.69-.8-.22-.08-.39-.12-.55.12-.16.25-.63.8-.78.97-.14.16-.29.18-.53.06-.25-.12-1.04-.38-1.97-1.22-.73-.65-1.22-1.45-1.37-1.7-.14-.24-.01-.37.11-.5.11-.1.25-.28.37-.43.12-.14.16-.24.24-.4.08-.17.04-.31-.02-.43-.06-.13-.55-1.34-.76-1.83-.2-.48-.4-.42-.55-.42h-.47a.9.9 0 0 0-.66.31c-.22.25-.87.85-.87 2.07s.89 2.4 1.01 2.57c.12.16 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.6.19 1.14.16 1.57.1.48-.07 1.46-.6 1.67-1.17.2-.58.2-1.07.14-1.17-.06-.1-.22-.17-.47-.29z"/></svg>
+</a>
+
+<!-- Modal de vídeo -->
+<div class="modal" id="modal" aria-hidden="true">
+  <button class="modal-fechar" id="modalFechar" aria-label="Fechar">×</button>
+  <div class="modal-video" id="modalVideo"></div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
