@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel · Maari Mobile</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#7B5540">
+<link rel="icon" type="image/png" href="../marca/favicon.png">
+<link rel="apple-touch-icon" href="../marca/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Hind:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="estrela" viewBox="0 0 24 32"><path d="M12 0C12.8 11 14.5 14.6 24 16 14.5 17.4 12.8 21 12 32 11.2 21 9.5 17.4 0 16 9.5 14.6 11.2 11 12 0Z"/></symbol>
+</svg>
+
+<!-- Carregando -->
+<div class="tela tela-entrada textura" id="telaCarregando">
+  <div class="carregando" role="status"><svg class="estrela" aria-hidden="true"><use href="#estrela"/></svg><span>Carregando…</span></div>
+</div>
+
+<!-- Painel ainda não conectado -->
+<div class="tela tela-entrada textura" id="telaAviso" hidden>
+  <div class="caixa-entrada">
+    <img class="logo-entrada" src="../marca/logo-principal.png" alt="Maari Mobile" width="983" height="486">
+    <div class="cartao-entrada">
+      <h1>Painel ainda não conectado</h1>
+      <p>Para o login funcionar, falta preencher os dados do Supabase no arquivo <code>js/config.js</code>. O passo a passo está no <code>README.md</code> do projeto.</p>
+      <a class="btn btn-marrom" href="../">Voltar ao site</a>
+    </div>
+  </div>
+</div>
+
+<!-- Login -->
+<div class="tela tela-entrada textura" id="telaLogin" hidden>
+  <div class="caixa-entrada">
+    <img class="logo-entrada" src="../marca/logo-principal.png" alt="Maari Mobile" width="983" height="486">
+
+    <form class="cartao-entrada" id="formLogin" novalidate>
+      <h1>Entrar no painel</h1>
+      <p class="sub">Aqui você adiciona e organiza os vídeos e fotos do site.</p>
+      <label class="campo"><span>E-mail</span><input type="email" name="email" autocomplete="username" required></label>
+      <label class="campo"><span>Senha</span><input type="password" name="senha" autocomplete="current-password" required></label>
+      <p class="erro" role="alert"></p>
+      <button class="btn btn-marrom largo" type="submit">Entrar</button>
+      <button class="link-simples" type="button" data-ir="esqueci">Esqueci minha senha</button>
+    </form>
+
+    <form class="cartao-entrada" id="formEsqueci" novalidate hidden>
+      <h1>Recuperar senha</h1>
+      <p class="sub">Digite seu e-mail. Vamos enviar um link para você criar uma senha nova.</p>
+      <label class="campo"><span>E-mail</span><input type="email" name="email" autocomplete="username" required></label>
+      <p class="erro" role="alert"></p>
+      <p class="ok" role="status"></p>
+      <button class="btn btn-marrom largo" type="submit">Enviar link</button>
+      <button class="link-simples" type="button" data-ir="login">Voltar para o login</button>
+    </form>
+
+    <a class="voltar-site" href="../">← Voltar ao site</a>
+  </div>
+</div>
+
+<!-- Nova senha (depois de clicar no link do e-mail) -->
+<div class="tela tela-entrada textura" id="telaNovaSenha" hidden>
+  <div class="caixa-entrada">
+    <img class="logo-entrada" src="../marca/logo-principal.png" alt="Maari Mobile" width="983" height="486">
+    <form class="cartao-entrada" id="formNovaSenha" novalidate>
+      <h1>Criar senha nova</h1>
+      <label class="campo"><span>Senha nova (mínimo 8 caracteres)</span><input type="password" name="senha" autocomplete="new-password" minlength="8" required></label>
+      <label class="campo"><span>Repita a senha</span><input type="password" name="confirma" autocomplete="new-password" minlength="8" required></label>
+      <p class="erro" role="alert"></p>
+      <button class="btn btn-marrom largo" type="submit">Salvar senha</button>
+    </form>
+  </div>
+</div>
+
+<!-- Painel -->
+<div class="tela" id="telaPainel" hidden>
+  <header class="topo">
+    <img class="topo-logo" src="../marca/logo-nome.png" alt="Maari Mobile" width="817" height="350">
+    <div class="topo-acoes">
+      <a class="topo-link" href="../" target="_blank" rel="noopener">Ver site ↗</a>
+      <button class="topo-link" type="button" id="btnSair">Sair</button>
+    </div>
+  </header>
+
+  <nav class="abas" role="tablist" aria-label="Seções do painel">
+    <button class="aba ativa" type="button" role="tab" aria-selected="true" aria-controls="abaPortfolio" data-aba="abaPortfolio">Portfólio</button>
+    <button class="aba" type="button" role="tab" aria-selected="false" aria-controls="abaFotos" data-aba="abaFotos">Fotos do site</button>
+  </nav>
+
+  <main class="painel">
+    <section id="abaPortfolio" role="tabpanel">
+      <div class="painel-cabeca">
+        <div>
+          <h1>Seus trabalhos</h1>
+          <p class="sub" id="contagem">Os trabalhos aparecem no site na mesma ordem desta lista.</p>
+        </div>
+        <button class="btn btn-marrom" type="button" id="btnNovo"><span aria-hidden="true">＋</span> Adicionar trabalho</button>
+      </div>
+      <div class="lista" id="lista" aria-live="polite"></div>
+      <div class="vazio" id="vazio" hidden>
+        <svg class="estrela" aria-hidden="true"><use href="#estrela"/></svg>
+        <h2>Nenhum trabalho ainda</h2>
+        <p>Clique em <strong>Adicionar trabalho</strong> para colocar o primeiro vídeo ou foto no site.</p>
+      </div>
+    </section>
+
+    <section id="abaFotos" role="tabpanel" hidden>
+      <div class="painel-cabeca">
+        <div>
+          <h1>Fotos do site</h1>
+          <p class="sub">As fotos fixas do topo, da seção "Sobre" e dos cards de serviço.</p>
+        </div>
+      </div>
+      <div class="lista lista-fotos" id="listaFotos"></div>
+    </section>
+  </main>
+</div>
+
+<!-- Adicionar / editar trabalho -->
+<dialog class="janela" id="editor" aria-labelledby="editorTitulo">
+  <form id="formTrabalho" method="dialog" novalidate>
+    <div class="janela-cabeca">
+      <h2 id="editorTitulo">Adicionar trabalho</h2>
+      <button class="fechar" type="button" data-fechar aria-label="Fechar">×</button>
+    </div>
+
+    <div class="janela-corpo">
+      <label class="campo"><span>Nome do trabalho</span><input type="text" name="titulo" maxlength="80" placeholder="Ex.: Casamento Ana &amp; Pedro" required></label>
+
+      <fieldset class="campo">
+        <legend>Categoria</legend>
+        <div class="pilulas">
+          <label><input type="radio" name="categoria" value="marcas" required><span>Marcas</span></label>
+          <label><input type="radio" name="categoria" value="casamentos"><span>Casamentos</span></label>
+          <label><input type="radio" name="categoria" value="eventos"><span>Eventos</span></label>
+          <label><input type="radio" name="categoria" value="reels"><span>Reels</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="campo">
+        <legend>Vídeo</legend>
+        <div class="pilulas">
+          <label><input type="radio" name="modoVideo" value="link" checked><span>Colar um link</span></label>
+          <label><input type="radio" name="modoVideo" value="arquivo"><span>Enviar arquivo</span></label>
+          <label><input type="radio" name="modoVideo" value="nenhum"><span>Sem vídeo, só foto</span></label>
+        </div>
+
+        <div class="modo" data-modo="link">
+          <input type="url" name="link" inputmode="url" placeholder="Cole aqui o link do YouTube, Vimeo, Instagram, TikTok ou Drive">
+          <p class="dica" id="dicaLink">Dica: no YouTube, o vídeo pode ser "não listado" para aparecer só aqui.</p>
+        </div>
+
+        <div class="modo" data-modo="arquivo" hidden>
+          <label class="soltar" id="soltarVideo">
+            <input type="file" name="arquivoVideo" accept="video/mp4,video/quicktime,video/webm">
+            <span class="soltar-texto"><strong>Clique para escolher o vídeo</strong> ou arraste o arquivo aqui<small>MP4, MOV ou WEBM · até 50 MB</small></span>
+          </label>
+          <p class="dica" id="dicaArquivo"></p>
+        </div>
+      </fieldset>
+
+      <div class="campo">
+        <span class="legenda">Foto de capa <small id="capaOpcional">(opcional se o vídeo for do YouTube)</small></span>
+        <label class="soltar soltar-foto" id="soltarCapa">
+          <input type="file" name="arquivoCapa" accept="image/*">
+          <img class="previa" id="previaCapa" alt="" hidden>
+          <span class="soltar-texto"><strong>Clique para escolher a foto</strong><span class="soltar-extra"> ou arraste aqui</span><small>JPG ou PNG · a foto é reduzida automaticamente</small></span>
+        </label>
+        <div class="capa-acoes">
+          <p class="dica" id="dicaCapa"></p>
+          <button class="link-simples" type="button" id="btnTirarCapa" hidden>Remover foto</button>
+        </div>
+      </div>
+
+      <fieldset class="campo">
+        <legend>Tamanho na galeria</legend>
+        <div class="formatos">
+          <label><input type="radio" name="formato" value="normal" checked><span><i class="f-normal" aria-hidden="true"></i>Normal</span></label>
+          <label><input type="radio" name="formato" value="alto"><span><i class="f-alto" aria-hidden="true"></i>Alto</span></label>
+          <label><input type="radio" name="formato" value="largo"><span><i class="f-largo" aria-hidden="true"></i>Largo</span></label>
+        </div>
+      </fieldset>
+
+      <label class="chave"><input type="checkbox" name="visivel" checked><span class="chave-trilho" aria-hidden="true"></span>Mostrar no site</label>
+    </div>
+
+    <div class="janela-rodape">
+      <div class="progresso" id="progresso" hidden>
+        <div class="progresso-trilho"><div class="progresso-barra" id="progressoBarra"></div></div>
+        <span id="progressoTexto">Enviando…</span>
+      </div>
+      <p class="erro" id="erroEditor" role="alert"></p>
+      <div class="janela-botoes">
+        <button class="btn btn-claro" type="button" data-fechar>Cancelar</button>
+        <button class="btn btn-marrom" type="submit" id="btnSalvar">Salvar</button>
+      </div>
+    </div>
+  </form>
+</dialog>
+
+<!-- Confirmação -->
+<dialog class="janela janela-pequena" id="confirmar" aria-labelledby="confirmarTitulo">
+  <form method="dialog">
+    <div class="janela-corpo">
+      <h2 id="confirmarTitulo">Tem certeza?</h2>
+      <p id="confirmarTexto"></p>
+    </div>
+    <div class="janela-rodape">
+      <div class="janela-botoes">
+        <button class="btn btn-claro" value="nao">Cancelar</button>
+        <button class="btn btn-perigo" value="sim" id="confirmarSim">Excluir</button>
+      </div>
+    </div>
+  </form>
+</dialog>
+
+<input type="file" id="arquivoFotoSite" accept="image/*" hidden>
+<div class="aviso" id="aviso" role="status" aria-live="polite"></div>
+
+<script src="../js/config.js"></script>
+<script src="../js/midia.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.0/dist/umd/supabase.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>

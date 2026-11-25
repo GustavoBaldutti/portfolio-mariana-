@@ -17,7 +17,8 @@
 
 <!-- ============ CONFIGURAÇÃO RÁPIDA ============
   WhatsApp: troque o número em js/main.js (const WHATSAPP)
-  Fotos: coloque os arquivos na pasta /fotos com os nomes usados abaixo
+  Vídeos e fotos: pelo painel em /admin (veja o README). Sem painel conectado,
+  valem as fotos da pasta /fotos com os nomes usados abaixo
   Identidade visual (logos, padrão, textura): pasta /marca
   ============================================== -->
 
@@ -41,7 +42,7 @@
 
 <!-- HERO -->
 <header class="hero" id="inicio">
-  <div class="hero-bg foto" data-img="fotos/mariana.png"></div>
+  <div class="hero-bg foto" data-slot="hero" data-img="fotos/mariana.png"></div>
   <svg class="estrela hero-estrela e1" aria-hidden="true"><use href="#estrela"/></svg>
   <svg class="estrela hero-estrela e2" aria-hidden="true"><use href="#estrela"/></svg>
   <div class="hero-conteudo reveal">
@@ -66,7 +67,7 @@
 <!-- SOBRE -->
 <section class="secao secao-creme" id="sobre">
   <div class="container sobre">
-    <div class="sobre-foto foto reveal" data-img="fotos/mariana.png"><span class="sobre-tag">Oi, eu sou a Mariana</span></div>
+    <div class="sobre-foto foto reveal" data-slot="sobre" data-img="fotos/mariana.png"><span class="sobre-tag">Oi, eu sou a Mariana</span></div>
     <div class="sobre-texto reveal">
       <span class="label escuro">Quem está por trás da câmera</span>
       <h2>Um bom vídeo começa muito antes do <em>rec</em></h2>
@@ -93,7 +94,7 @@
     </div>
     <div class="cards">
       <a class="card reveal" href="#portfolio" data-filtro="marcas">
-        <div class="card-img foto" data-img="fotos/servico-marcas.jpg"></div>
+        <div class="card-img foto" data-slot="servico-marcas" data-img="fotos/servico-marcas.jpg"></div>
         <div class="card-conteudo">
           <div class="card-num">01</div>
           <h3>Conteúdo para marcas</h3>
@@ -104,7 +105,7 @@
         </div>
       </a>
       <a class="card reveal" href="#portfolio" data-filtro="casamentos">
-        <div class="card-img foto" data-img="fotos/servico-casamentos.jpg"></div>
+        <div class="card-img foto" data-slot="servico-casamentos" data-img="fotos/servico-casamentos.jpg"></div>
         <div class="card-conteudo">
           <div class="card-num">02</div>
           <h3>Casamentos</h3>
@@ -115,7 +116,7 @@
         </div>
       </a>
       <a class="card reveal" href="#portfolio" data-filtro="eventos">
-        <div class="card-img foto" data-img="fotos/servico-eventos.jpg"></div>
+        <div class="card-img foto" data-slot="servico-eventos" data-img="fotos/servico-eventos.jpg"></div>
         <div class="card-conteudo">
           <div class="card-num">03</div>
           <h3>Eventos</h3>
@@ -126,7 +127,7 @@
         </div>
       </a>
       <a class="card reveal" href="#portfolio" data-filtro="reels">
-        <div class="card-img foto" data-img="fotos/servico-reels.jpg"></div>
+        <div class="card-img foto" data-slot="servico-reels" data-img="fotos/servico-reels.jpg"></div>
         <div class="card-conteudo">
           <div class="card-num">04</div>
           <h3>Reels &amp; edição</h3>
@@ -183,14 +184,14 @@
       <button class="filtro" data-filtro="eventos">Eventos</button>
       <button class="filtro" data-filtro="reels">Reels</button>
     </div>
-    <!-- Para cada vídeo: data-video = link de incorporação do YouTube/Vimeo (ex.: https://www.youtube.com/embed/ID) -->
+    <!-- Os trabalhos vêm do painel (/admin). Estes abaixo só aparecem enquanto o painel estiver vazio ou desconectado. -->
     <div class="galeria">
-      <button class="item foto reveal" data-cat="marcas" data-video="" data-img="fotos/trabalho-1.jpg"><span class="item-info"><small>Marca</small>Nome do projeto</span><span class="play"></span></button>
-      <button class="item item-alto foto reveal" data-cat="casamentos" data-video="" data-img="fotos/trabalho-2.jpg"><span class="item-info"><small>Casamento</small>Ana &amp; Pedro</span><span class="play"></span></button>
-      <button class="item foto reveal" data-cat="eventos" data-video="" data-img="fotos/trabalho-3.jpg"><span class="item-info"><small>Evento</small>Nome do evento</span><span class="play"></span></button>
-      <button class="item foto reveal" data-cat="reels" data-video="" data-img="fotos/trabalho-4.jpg"><span class="item-info"><small>Reels</small>Nome do projeto</span><span class="play"></span></button>
-      <button class="item foto reveal" data-cat="marcas" data-video="" data-img="fotos/trabalho-5.jpg"><span class="item-info"><small>Marca</small>Nome do projeto</span><span class="play"></span></button>
-      <button class="item item-largo foto reveal" data-cat="casamentos" data-video="" data-img="fotos/trabalho-6.jpg"><span class="item-info"><small>Casamento</small>Julia &amp; Rafa</span><span class="play"></span></button>
+      <button type="button" class="item foto reveal" data-cat="marcas" data-video="" data-img="fotos/trabalho-1.jpg"><span class="item-info"><small>Marca</small>Nome do projeto</span><span class="play"></span></button>
+      <button type="button" class="item item-alto foto reveal" data-cat="casamentos" data-video="" data-img="fotos/trabalho-2.jpg"><span class="item-info"><small>Casamento</small>Ana &amp; Pedro</span><span class="play"></span></button>
+      <button type="button" class="item foto reveal" data-cat="eventos" data-video="" data-img="fotos/trabalho-3.jpg"><span class="item-info"><small>Evento</small>Nome do evento</span><span class="play"></span></button>
+      <button type="button" class="item foto reveal" data-cat="reels" data-video="" data-img="fotos/trabalho-4.jpg"><span class="item-info"><small>Reels</small>Nome do projeto</span><span class="play"></span></button>
+      <button type="button" class="item foto reveal" data-cat="marcas" data-video="" data-img="fotos/trabalho-5.jpg"><span class="item-info"><small>Marca</small>Nome do projeto</span><span class="play"></span></button>
+      <button type="button" class="item item-largo foto reveal" data-cat="casamentos" data-video="" data-img="fotos/trabalho-6.jpg"><span class="item-info"><small>Casamento</small>Julia &amp; Rafa</span><span class="play"></span></button>
     </div>
   </div>
 </section>
@@ -244,7 +245,7 @@
       </ul>
     </div>
   </div>
-  <div class="footer-bottom">© <span id="ano">2026</span> Maari Mobile. Todos os direitos reservados.</div>
+  <div class="footer-bottom">© <span id="ano">2026</span> Maari Mobile. Todos os direitos reservados. <a class="footer-admin" href="admin/" rel="nofollow">Área restrita</a></div>
 </footer>
 
 <a href="#" class="whats" data-wa="Oi Mariana, vim pelo site e queria conversar" aria-label="Falar no WhatsApp">
@@ -257,6 +258,8 @@
   <div class="modal-video" id="modalVideo"></div>
 </div>
 
+<script src="js/config.js"></script>
+<script src="js/midia.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
