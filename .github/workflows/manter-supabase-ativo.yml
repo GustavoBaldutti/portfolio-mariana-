@@ -1,0 +1,27 @@
+# O Supabase pausa projetos grátis depois de 7 dias sem uso.
+# Esta rotina faz uma consulta simples a cada 3 dias para manter o painel ativo.
+name: Manter Supabase ativo
+
+on:
+  schedule:
+    - cron: '0 12 */3 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  consultar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Consultar a lista de trabalhos
+        run: |
+          URL=$(sed -n "s/.*supabaseUrl: *'\([^']*\)'.*/\1/p" js/config.js)
+          CHAVE=$(sed -n "s/.*supabaseAnonKey: *'\([^']*\)'.*/\1/p" js/config.js)
+          if [ -z "$URL" ] || [ -z "$CHAVE" ]; then
+            echo "js/config.js ainda não foi preenchido; nada a fazer."
+            exit 0
+          fi
+          curl -fsS "$URL/rest/v1/trabalhos?select=id&limit=1" \
+            -H "apikey: $CHAVE" -H "Authorization: Bearer $CHAVE"
