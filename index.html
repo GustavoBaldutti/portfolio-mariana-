@@ -3,11 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mariana · Videomaker</title>
-<meta name="description" content="Mariana, videomaker. Vídeos com narrativa, emoção e propósito para marcas, casamentos e eventos.">
+<title>Maari Mobile · Videomaker &amp; Storymaker</title>
+<meta name="description" content="Maari Mobile, videomaker e storymaker. Vídeos com sensibilidade, humanização e criatividade para marcas, casamentos e eventos.">
+<meta name="theme-color" content="#7B5540">
+<link rel="icon" type="image/png" href="marca/favicon.png">
+<link rel="apple-touch-icon" href="marca/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Hind:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -15,10 +18,16 @@
 <!-- ============ CONFIGURAÇÃO RÁPIDA ============
   WhatsApp: troque o número em js/main.js (const WHATSAPP)
   Fotos: coloque os arquivos na pasta /fotos com os nomes usados abaixo
+  Identidade visual (logos, padrão, textura): pasta /marca
   ============================================== -->
 
+<!-- Estrela da marca (reutilizada com <use href="#estrela">) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="estrela" viewBox="0 0 24 32"><path d="M12 0C12.8 11 14.5 14.6 24 16 14.5 17.4 12.8 21 12 32 11.2 21 9.5 17.4 0 16 9.5 14.6 11.2 11 12 0Z"/></symbol>
+</svg>
+
 <nav id="navbar">
-  <a class="nav-logo" href="#inicio">Mariana<span>.</span></a>
+  <a class="nav-logo" href="#inicio"><img src="marca/logo-nome.png" alt="Maari Mobile" width="817" height="350"></a>
   <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
   <ul class="nav-links" id="navLinks">
     <li><a href="#sobre">Sobre</a></li>
@@ -26,49 +35,56 @@
     <li><a href="#metodo">Método</a></li>
     <li><a href="#portfolio">Portfólio</a></li>
     <li><a href="#contato">Contato</a></li>
-    <li><a href="#" class="btn btn-areia" data-wa="Oi Mariana, vim pelo site e queria conversar sobre um vídeo">Fale comigo</a></li>
+    <li><a href="#" class="btn btn-creme" data-wa="Oi Mariana, vim pelo site e queria conversar sobre um vídeo">Fale comigo</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <header class="hero" id="inicio">
   <div class="hero-bg foto" data-img="fotos/mariana.png"></div>
+  <svg class="estrela hero-estrela e1" aria-hidden="true"><use href="#estrela"/></svg>
+  <svg class="estrela hero-estrela e2" aria-hidden="true"><use href="#estrela"/></svg>
   <div class="hero-conteudo reveal">
-    <span class="label">Videomaker · Sua cidade, UF</span>
+    <span class="label">Videomaker &amp; Storymaker · Sua cidade, UF</span>
     <h1>Histórias em movimento,<br>contadas do <em>seu jeito</em></h1>
-    <p>Crio vídeos para marcas, casamentos e eventos com olhar de cinema e intenção clara, do roteiro à edição final, para que cada cena diga exatamente o que precisa dizer.</p>
+    <p>Crio vídeos para marcas, casamentos e eventos com sensibilidade e intenção clara, do roteiro à edição final, para eternizar os detalhes que passam despercebidos na correria do momento.</p>
     <div class="hero-acoes">
-      <a class="btn btn-areia" href="#portfolio">Ver portfólio</a>
+      <a class="btn btn-creme" href="#portfolio">Ver portfólio</a>
       <a class="btn btn-outline" href="#" data-wa="Oi Mariana, vim pelo site e tenho um projeto em mente">Conversar sobre um projeto</a>
     </div>
   </div>
-  <a class="hero-scroll" href="#numeros" aria-label="Rolar para baixo">Role</a>
+  <div class="hero-corte padrao" aria-hidden="true"></div>
 </header>
 
 <!-- NÚMEROS -->
-<section class="numeros" id="numeros">
+<section class="numeros padrao" id="numeros">
   <div class="numero-item reveal"><strong data-count="300">+300</strong><span>Vídeos entregues</span></div>
   <div class="numero-item reveal"><strong data-count="80">+80</strong><span>Clientes atendidos</span></div>
   <div class="numero-item reveal"><strong data-count="5">+5</strong><span>Anos atrás da câmera</span></div>
 </section>
 
 <!-- SOBRE -->
-<section class="secao secao-areia" id="sobre">
+<section class="secao secao-creme" id="sobre">
   <div class="container sobre">
     <div class="sobre-foto foto reveal" data-img="fotos/mariana.png"><span class="sobre-tag">Oi, eu sou a Mariana</span></div>
     <div class="sobre-texto reveal">
       <span class="label escuro">Quem está por trás da câmera</span>
       <h2>Um bom vídeo começa muito antes do <em>rec</em></h2>
-      <div class="linha"></div>
-      <p>Escreva aqui a sua história: como você chegou ao audiovisual, o que te move e o que faz o seu trabalho ser diferente. Duas ou três frases sinceras funcionam melhor do que um currículo inteiro.</p>
-      <p>Conte também como é trabalhar com você: se você conversa antes de gravar, se acompanha todas as captações, qual o cuidado com a edição. É isso que faz alguém sentir confiança para te chamar.</p>
-      <a class="btn btn-outline-escuro" href="#metodo">Conhecer meu método</a>
+      <div class="linha"><svg class="estrela" aria-hidden="true"><use href="#estrela"/></svg></div>
+      <p>A Maari Mobile nasce da união entre a sensibilidade humana e a agilidade da tecnologia móvel. Mais do que registrar imagens, o propósito é eternizar sentimentos e detalhes que muitas vezes passam despercebidos na correria do momento, para que cada cliente reviva suas histórias com emoção, ritmo e verdade.</p>
+      <p>Meu trabalho é próximo e comprometido: conversamos antes de gravar, eu acompanho cada captação e cuido da edição como se a história fosse minha. É isso que dá segurança para quem me confia os seus momentos mais importantes.</p>
+      <ul class="pilares">
+        <li>Sensibilidade</li>
+        <li>Humanização</li>
+        <li>Criatividade</li>
+      </ul>
+      <a class="btn btn-marrom" href="#metodo">Conhecer meu método</a>
     </div>
   </div>
 </section>
 
 <!-- SERVIÇOS -->
-<section class="secao secao-escura" id="servicos">
+<section class="secao secao-oliva" id="servicos">
   <div class="container">
     <div class="intro reveal">
       <span class="label">O que você precisa?</span>
@@ -125,12 +141,15 @@
 </section>
 
 <!-- BANNER -->
-<div class="banner reveal">
-  <div>
-    <h3>Ainda não sabe qual formato é o seu?</h3>
-    <p>Me conta o seu objetivo e eu te indico o melhor caminho, sem compromisso.</p>
+<div class="banner-faixa padrao">
+  <div class="banner reveal">
+    <svg class="estrela banner-estrela" aria-hidden="true"><use href="#estrela"/></svg>
+    <div>
+      <h3>Ainda não sabe qual formato é o seu?</h3>
+      <p>Me conta o seu objetivo e eu te indico o melhor caminho, sem compromisso.</p>
+    </div>
+    <a href="#" class="btn btn-oliva" data-wa="Oi Mariana, ainda não sei qual formato de vídeo preciso. Pode me ajudar?">Quero uma indicação</a>
   </div>
-  <a href="#" class="btn btn-oliva" data-wa="Oi Mariana, ainda não sei qual formato de vídeo preciso. Pode me ajudar?">Quero uma indicação</a>
 </div>
 
 <!-- MÉTODO -->
@@ -142,16 +161,16 @@
       <p>Conceito, Emoção, Narrativa e Ação. As quatro etapas que guiam todo projeto, do primeiro briefing à entrega.</p>
     </div>
     <div class="metodo-grid reveal">
-      <div class="metodo-item"><div class="metodo-letra">C</div><div class="metodo-palavra">Conceito</div><p>Entendo quem você é, para quem fala e qual a ideia central que o vídeo precisa carregar.</p></div>
-      <div class="metodo-item"><div class="metodo-letra">E</div><div class="metodo-palavra">Emoção</div><p>Defino o sentimento que cada cena deve provocar, da trilha à luz e ao enquadramento.</p></div>
-      <div class="metodo-item"><div class="metodo-letra">N</div><div class="metodo-palavra">Narrativa</div><p>Organizo começo, meio e fim para que a história flua e prenda até o último segundo.</p></div>
-      <div class="metodo-item"><div class="metodo-letra">A</div><div class="metodo-palavra">Ação</div><p>Todo vídeo tem um propósito: vender, emocionar, lembrar. A entrega é pensada para isso.</p></div>
+      <div class="metodo-item"><svg class="estrela" aria-hidden="true"><use href="#estrela"/></svg><div class="metodo-letra">C</div><div class="metodo-palavra">Conceito</div><p>Entendo quem você é, para quem fala e qual a ideia central que o vídeo precisa carregar.</p></div>
+      <div class="metodo-item"><svg class="estrela" aria-hidden="true"><use href="#estrela"/></svg><div class="metodo-letra">E</div><div class="metodo-palavra">Emoção</div><p>Defino o sentimento que cada cena deve provocar, da trilha à luz e ao enquadramento.</p></div>
+      <div class="metodo-item"><svg class="estrela" aria-hidden="true"><use href="#estrela"/></svg><div class="metodo-letra">N</div><div class="metodo-palavra">Narrativa</div><p>Organizo começo, meio e fim para que a história flua e prenda até o último segundo.</p></div>
+      <div class="metodo-item"><svg class="estrela" aria-hidden="true"><use href="#estrela"/></svg><div class="metodo-letra">A</div><div class="metodo-palavra">Ação</div><p>Todo vídeo tem um propósito: vender, emocionar, lembrar. A entrega é pensada para isso.</p></div>
     </div>
   </div>
 </section>
 
 <!-- PORTFÓLIO -->
-<section class="secao secao-escura" id="portfolio">
+<section class="secao secao-marrom" id="portfolio">
   <div class="container">
     <div class="intro reveal">
       <span class="label">Portfólio</span>
@@ -180,7 +199,7 @@
 <section class="secao secao-areia">
   <div class="container">
     <figure class="depoimento reveal">
-      <div class="linha centro"></div>
+      <svg class="estrela depo-estrela" aria-hidden="true"><use href="#estrela"/></svg>
       <blockquote>“Coloque aqui um depoimento real de cliente. Uma frase curta e verdadeira vale mais do que um parágrafo.”</blockquote>
       <figcaption>Nome do cliente · Tipo de projeto</figcaption>
     </figure>
@@ -188,14 +207,15 @@
 </section>
 
 <!-- CTA FINAL -->
-<section class="secao secao-escura" id="contato">
+<section class="secao secao-oliva textura" id="contato">
   <div class="container cta reveal">
+    <img class="cta-icone" src="marca/icone.png" alt="" width="359" height="588">
     <span class="label">Próximo passo</span>
     <h2>Vamos transformar sua ideia<br>em <em>cena</em>?</h2>
     <p>Me conta o que você tem em mente. Não precisa estar tudo definido: a gente descobre o melhor caminho juntas na conversa.</p>
     <div class="cta-acoes">
-      <a href="#" class="btn btn-areia" data-wa="Oi Mariana, vim pelo site e quero conversar sobre um projeto">Falar pelo WhatsApp</a>
-      <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="btn btn-outline">Ver no Instagram</a>
+      <a href="#" class="btn btn-creme" data-wa="Oi Mariana, vim pelo site e quero conversar sobre um projeto">Falar pelo WhatsApp</a>
+      <a href="https://www.instagram.com/maarimobile" target="_blank" rel="noopener" class="btn btn-outline">Ver no Instagram</a>
     </div>
   </div>
 </section>
@@ -203,9 +223,8 @@
 <footer>
   <div class="footer-grid">
     <div>
-      <h3 class="footer-logo">Mariana<span>.</span></h3>
-      <div class="linha"></div>
-      <p>Videomaker em Sua cidade, UF.<br>Atendimento em todo o Brasil.</p>
+      <img class="footer-logo" src="marca/logo-principal.png" alt="Maari Mobile · videomaker e storymaker" width="983" height="486">
+      <p>Videomaker &amp; storymaker em Sua cidade, UF.<br>Atendimento em todo o Brasil.</p>
     </div>
     <nav>
       <h4>Navegação</h4>
@@ -220,12 +239,12 @@
       <h4>Contato</h4>
       <ul>
         <li><a href="#" data-wa="Oi Mariana, vim pelo site">(00) 00000-0000</a></li>
-        <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram @seuusuario</a></li>
+        <li><a href="https://www.instagram.com/maarimobile" target="_blank" rel="noopener">Instagram @maarimobile</a></li>
         <li><a href="mailto:contato@exemplo.com">contato@exemplo.com</a></li>
       </ul>
     </div>
   </div>
-  <div class="footer-bottom">© <span id="ano">2026</span> Mariana. Todos os direitos reservados.</div>
+  <div class="footer-bottom">© <span id="ano">2026</span> Maari Mobile. Todos os direitos reservados.</div>
 </footer>
 
 <a href="#" class="whats" data-wa="Oi Mariana, vim pelo site e queria conversar" aria-label="Falar no WhatsApp">

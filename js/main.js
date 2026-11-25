@@ -6,7 +6,7 @@ const WHATSAPP = '5500000000000';
 document.querySelectorAll('[data-img]').forEach((el) => {
   const img = new Image();
   img.onload = () => {
-    el.style.backgroundImage = `url("${img.src}"), linear-gradient(150deg, #4a5436, #1f2418)`;
+    el.style.backgroundImage = `url("${img.src}"), linear-gradient(150deg, #B8837B, #7B5540)`;
   };
   img.src = el.dataset.img;
 });
